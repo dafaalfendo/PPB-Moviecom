@@ -21,6 +21,9 @@ import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Action.ActionFra
 import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Adventure.AdventureFragment;
 import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Crime.CrimeFragment;
 import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Family.FamilyFragment;
+import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.History.HistoryFragment;
+import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Horor.HororFragment;
+import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.War.WarFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -149,6 +152,12 @@ public class MainActivity extends AppCompatActivity {
                 return new CrimeFragment();
             } else if (position == 3) {
                 return new FamilyFragment();
+            } else if (position == 4) {
+                return new HistoryFragment();
+            } else if (position == 5) {
+                return new HororFragment();
+            } else if (position == 6) {
+                return new WarFragment();
             } else {
                 return PlaceholderFragment.newInstance(position + 1);
             }

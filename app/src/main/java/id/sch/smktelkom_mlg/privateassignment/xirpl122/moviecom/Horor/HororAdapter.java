@@ -31,7 +31,7 @@ public class HororAdapter extends RecyclerView.Adapter<HororAdapter.ViewHolder> 
 
     @Override
     public HororAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.adventure_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.horor_item, parent, false);
         return new HororAdapter.ViewHolder(v);
     }
 
@@ -75,10 +75,10 @@ public class HororAdapter extends RecyclerView.Adapter<HororAdapter.ViewHolder> 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            tvTitle = (TextView) itemView.findViewById(R.id.textViewAdventure);
-            llLinear = (LinearLayout) itemView.findViewById(R.id.LinearLayoutAdventure);
-            ivImage = (ImageView) itemView.findViewById(R.id.imageViewAdventure);
-            tvPop = (TextView) itemView.findViewById(R.id.textViewAdventurePopularity);
+            tvTitle = (TextView) itemView.findViewById(R.id.textViewHoror);
+            llLinear = (LinearLayout) itemView.findViewById(R.id.LinearLayoutHoror);
+            ivImage = (ImageView) itemView.findViewById(R.id.imageViewHoror);
+            tvPop = (TextView) itemView.findViewById(R.id.textViewHororPopularity);
         }
     }
 }

@@ -75,10 +75,10 @@ public class FamilyAdapter extends RecyclerView.Adapter<FamilyAdapter.ViewHolder
         public ViewHolder(View itemView) {
             super(itemView);
 
-            tvTitle = (TextView) itemView.findViewById(R.id.textViewAdventure);
-            llLinear = (LinearLayout) itemView.findViewById(R.id.LinearLayoutAdventure);
-            ivImage = (ImageView) itemView.findViewById(R.id.imageViewAdventure);
-            tvPop = (TextView) itemView.findViewById(R.id.textViewAdventurePopularity);
+            tvTitle = (TextView) itemView.findViewById(R.id.textViewFamily);
+            llLinear = (LinearLayout) itemView.findViewById(R.id.LinearLayoutFamily);
+            ivImage = (ImageView) itemView.findViewById(R.id.imageViewFamily);
+            tvPop = (TextView) itemView.findViewById(R.id.textViewFamilyPopularity);
         }
     }
 }
