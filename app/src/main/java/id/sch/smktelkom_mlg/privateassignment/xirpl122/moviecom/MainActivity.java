@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Action.ActionFragment;
+import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Adventure.AdventureFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -140,6 +141,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (position == 0) {
                 return new ActionFragment();
+            } else if (position == 1) {
+                return new AdventureFragment();
             } else {
                 return PlaceholderFragment.newInstance(position + 1);
             }

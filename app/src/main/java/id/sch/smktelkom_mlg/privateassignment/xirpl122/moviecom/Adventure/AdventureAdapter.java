@@ -41,10 +41,10 @@ public class AdventureAdapter extends RecyclerView.Adapter<AdventureAdapter.View
 
 //        holder.imageViewOtof.setImageResource(R.drawable.ic_memory_black_24dp);
         holder.tvTitle.setText(adventureListItem.getTitle());
-
+        holder.tvPop.setText(adventureListItem.getPopularity());
         Glide
                 .with(context)
-                .load(adventureListItem.getImage())
+                .load("http://image.tmdb.org/t/p/w500" + adventureListItem.getImage())
                 .into(holder.ivImage);
 
         holder.llLinear.setOnClickListener(new View.OnClickListener() {

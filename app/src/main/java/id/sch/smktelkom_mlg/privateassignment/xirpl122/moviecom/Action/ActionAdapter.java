@@ -41,10 +41,10 @@ public class ActionAdapter extends RecyclerView.Adapter<ActionAdapter.ViewHolder
 
 //        holder.imageViewOtof.setImageResource(R.drawable.ic_memory_black_24dp);
         holder.tvTitle.setText(actionListItem.getTitle());
-
+        holder.tvPop.setText(actionListItem.getPopularity());
         Glide
                 .with(context)
-                .load(actionListItem.getImage())
+                .load("http://image.tmdb.org/t/p/w500" + actionListItem.getImage())
                 .into(holder.ivImage);
 
         holder.llLinear.setOnClickListener(new View.OnClickListener() {

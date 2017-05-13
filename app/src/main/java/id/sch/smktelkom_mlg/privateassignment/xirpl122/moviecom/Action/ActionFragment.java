@@ -33,7 +33,7 @@ import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.R;
  */
 public class ActionFragment extends Fragment {
 
-    private static final String URL_DATA = "https://api.themoviedb.org/3/genre/movie/list?api_key=cecc9162a02c65190851eebec7025119&language=en-US";
+    private static final String URL_DATA = "https://api.themoviedb.org/3/genre/28/movies?api_key=cecc9162a02c65190851eebec7025119&language=en-US&include_adult=false&sort_by=created_at.asc";
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -76,7 +76,7 @@ public class ActionFragment extends Fragment {
                         try {
                             JSONObject jsonObject = new JSONObject(s);
 
-                            JSONArray array = jsonObject.getJSONArray("result");
+                            JSONArray array = jsonObject.getJSONArray("results");
 
                             for (int i = 0; i < array.length(); i++) {
                                 JSONObject o = array.getJSONObject(i);
