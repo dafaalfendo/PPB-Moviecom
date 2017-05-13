@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Action.ActionFragment;
 import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Adventure.AdventureFragment;
+import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Crime.CrimeFragment;
+import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Family.FamilyFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -143,6 +145,10 @@ public class MainActivity extends AppCompatActivity {
                 return new ActionFragment();
             } else if (position == 1) {
                 return new AdventureFragment();
+            } else if (position == 2) {
+                return new CrimeFragment();
+            } else if (position == 3) {
+                return new FamilyFragment();
             } else {
                 return PlaceholderFragment.newInstance(position + 1);
             }
