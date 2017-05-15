@@ -63,7 +63,7 @@ public class WarFragment extends Fragment {
 
     private void loadRecyclerViewData() {
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Loading data.....");
+        progressDialog.setMessage("Please Wait.....");
         progressDialog.show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATA,

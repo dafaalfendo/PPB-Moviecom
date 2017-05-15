@@ -62,6 +62,7 @@ public class ActionFragment extends Fragment {
         return view;
     }
 
+
     private void loadRecyclerViewData() {
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading data.....");

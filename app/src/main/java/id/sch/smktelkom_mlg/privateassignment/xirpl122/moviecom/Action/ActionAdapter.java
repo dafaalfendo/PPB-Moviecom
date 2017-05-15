@@ -1,6 +1,7 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.Action;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,12 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.DetilActivity;
 import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.R;
 
 /**
@@ -50,12 +51,15 @@ public class ActionAdapter extends RecyclerView.Adapter<ActionAdapter.ViewHolder
         holder.llLinear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Will be released soon", Toast.LENGTH_LONG).show();
+//                Toast.makeText(context, "Will be released soon", Toast.LENGTH_LONG).show();
 
-//                Intent singleBlogIntent = new Intent(context, TechnologyDetailActivity.class);
-//                singleBlogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); //addFLags membuka activity dari fragment
-//                singleBlogIntent.putExtra("blog_id", position); //position untuk menentukan posisi di array
-//                context.startActivity(singleBlogIntent);
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
+                Intent intent = new Intent(context, DetilActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); //addFLags membuka activity dari fragment
+                intent.putExtra("id", position); //position untuk menentukan posisi di array
+                intent.putExtra("jenis", "Action");
+                context.startActivity(intent);
             }
         });
     }

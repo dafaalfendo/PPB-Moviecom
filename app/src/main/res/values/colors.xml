@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorToolBar">#cf3200</color>
+    <color name="colorTabSelected">#ffff00</color>
+    <color name="colorTab">#ffffff</color>
+    <color name="colorBG">#FFF9C4</color>
+    <color name="colorTextDetil">#BF360C</color>
+    <color name="colorBGToolBar">#FFD740</color>
+
 </resources>
