@@ -9,5 +9,6 @@
     <color name="colorBG">#FFF9C4</color>
     <color name="colorTextDetil">#BF360C</color>
     <color name="colorBGToolBar">#FFD740</color>
+    <color name="colorBlack">#000</color>
 
 </resources>
