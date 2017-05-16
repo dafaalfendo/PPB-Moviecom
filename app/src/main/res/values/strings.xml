@@ -5,6 +5,8 @@
 
     <string name="my_activity_label"></string>
 
+    <string name="my_activity_fav">Favorit Anda</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_detil_action">DetilActionActivity</string>
@@ -98,4 +100,5 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_detil">DetilActivity</string>
+    <string name="title_activity_favorite">FavoriteActivity</string>
 </resources>

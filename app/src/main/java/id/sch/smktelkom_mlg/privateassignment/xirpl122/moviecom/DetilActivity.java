@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,6 +24,8 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
+import id.sch.smktelkom_mlg.privateassignment.xirpl122.moviecom.db.MovieDBItem;
+
 public class DetilActivity extends AppCompatActivity implements Serializable {
 
     public TextView tvTitle;
@@ -30,10 +33,8 @@ public class DetilActivity extends AppCompatActivity implements Serializable {
     public TextView tvId;
     public TextView tvPopularity;
     public ImageView ivDetail;
-    public String url;
     public String imageURL;
     boolean isPressed = true;
-    FloatingActionButton fab;
     private Integer mPostkey = null;
     private String jenis = null;
     private String URL_DATA = "https://api.themoviedb.org/3/genre/movie/list?api_key=cecc9162a02c65190851eebec7025119&language=en-US";
@@ -70,7 +71,6 @@ public class DetilActivity extends AppCompatActivity implements Serializable {
         tvYear = (TextView) findViewById(R.id.textViewYear);
         tvId = (TextView) findViewById(R.id.textViewId);
         tvPopularity = (TextView) findViewById(R.id.textViewType);
-//        textViewReview = (TextView) findViewById(R.id.textViewReview);
         ivDetail = (ImageView) findViewById(R.id.imageViewDetail);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -81,41 +81,34 @@ public class DetilActivity extends AppCompatActivity implements Serializable {
             }
         });
 
-
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-
-        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (isPressed) {
-//                    doSave();
-//                    Snackbar.make(view, "Berhasil ditambahkan ke favorit", Snackbar.LENGTH_LONG)
-//                            .setAction("Action", null).show();
-//                } else {
-//
-//                    Snackbar.make(view, "Artikel favorit anda", Snackbar.LENGTH_LONG)
-//                            .setAction("Action", null).show();
-//                }
-//                isPressed = !isPressed;
+                if (isPressed == true) {
+                    String data = "Berhasil ditambahkan ke favorit";
+                    doSave();
+
+                    Toast.makeText(DetilActivity.this, data, Toast.LENGTH_SHORT).show();
+
+                    isPressed = false;
+                } else {
+                    Toast.makeText(DetilActivity.this, "Sudah ditambahkan ke favorit", Toast.LENGTH_LONG).show();
+                }
 
             }
         });
     }
 
-//    private void doSave() {
-////        String judul = textViewHeadet.getText().toString();
-////        String deskripsi = textViewDescet.getText().toString();
-////        String urlgambar = urlGambar;
-////        favouriteItem = new FavouriteItem(judul, deskripsi, urlgambar);
-////        favouriteItem.save();
-//
-//        String imageurl = imageURL;
-//        String title = textViewTitleet.getText().toString();
-//        String year = textViewYearet.getText().toString();
-//        heroDBItem = new HeroDBItem(imageurl, title, year);
-//        heroDBItem.save();
-//    }
+    private void doSave() {
+        String jenis = this.jenis;
+        String imageurl = "http://image.tmdb.org/t/p/w500" + imageURL;
+        String title = tvTitle.getText().toString();
+        String year = tvYear.getText().toString();
+        String desc = tvPopularity.getText().toString();
+        MovieDBItem movieDBItem = new MovieDBItem(imageurl, title, year, jenis, desc);
+        movieDBItem.save();
+    }
 
     private void loadRecyclerViewData() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -137,12 +130,13 @@ public class DetilActivity extends AppCompatActivity implements Serializable {
                             tvYear.setText(o.getString("release_date"));
                             tvId.setText("Popularity : " + o.getString("popularity"));
                             tvPopularity.setText(o.getString("overview"));
-//                            url = o.getJSONObject("link").getString("url");
 
                             Glide
                                     .with(DetilActivity.this)
                                     .load("http://image.tmdb.org/t/p/w500" + o.getString("poster_path"))
                                     .into(ivDetail);
+
+                            imageURL = o.getString("poster_path");
 
                         } catch (JSONException e) {
                             e.printStackTrace();
